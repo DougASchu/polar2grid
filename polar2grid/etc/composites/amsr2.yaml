@@ -1,0 +1,34 @@
+sensor_name: amsr2
+
+composites:
+  pct37:
+    compositor: !!python/name:satpy.composites.arithmetic.PCTCompositor
+    c_v: 2.181
+    c_h: 1.181
+    prerequisites:
+      - name: 'btemp_36.5v'
+      - name: 'btemp_36.5h'
+
+  pct89:
+    compositor: !!python/name:satpy.composites.arithmetic.PCTCompositor
+    c_v: 1.818
+    c_h: 0.818
+    prerequisites:
+      - name: 'btemp_89.0av'
+      - name: 'btemp_89.0ah'
+
+  37color:
+    compositor: !!python/name:satpy.composites.GenericCompositor
+    prerequisites:
+      - name: 'pct37'
+      - name: 'btemp_36.5v'
+      - name: 'btemp_36.5h'
+    standard_name: 37color
+
+  89color:
+    compositor: !!python/name:satpy.composites.GenericCompositor
+    prerequisites:
+      - name: 'pct89'
+      - name: 'btemp_89.0ah'
+      - name: 'btemp_89.0av'
+    standard_name: 89color
