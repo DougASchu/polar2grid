@@ -142,8 +142,8 @@ enhancements:
             - filename: colormaps/MIRS_RainRate.cmap
               min_value: 0
               max_value: 50
-  37color:
-    standard_name: 37color
+  color37:
+    standard_name: color37
     operations:
       - name: stretch
         method: !!python/name:satpy.enhancements.contrast.stretch
@@ -152,8 +152,8 @@ enhancements:
           min_stretch: [280.0, 180.0, 160.0]
           max_stretch: [260.0, 300.0, 300.0]
 
-  89color:
-    standard_name: 89color
+  color89:
+    standard_name: color89
     operations:
       - name: stretch
         method: !!python/name:satpy.enhancements.contrast.stretch

@@ -17,18 +17,18 @@ composites:
       - name: 'btemp_89.0av'
       - name: 'btemp_89.0ah'
 
-  37color:
+  color37:
     compositor: !!python/name:satpy.composites.GenericCompositor
     prerequisites:
       - name: 'pct37'
       - name: 'btemp_36.5v'
       - name: 'btemp_36.5h'
-    standard_name: 37color
+    standard_name: color37
 
-  89color:
+  color89:
     compositor: !!python/name:satpy.composites.GenericCompositor
     prerequisites:
       - name: 'pct89'
       - name: 'btemp_89.0ah'
       - name: 'btemp_89.0av'
-    standard_name: 89color
+    standard_name: color89
